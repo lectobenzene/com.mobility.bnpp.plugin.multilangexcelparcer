@@ -1,0 +1,54 @@
+<idea-plugin version="2">
+    <id>com.mobility.bnpp.plugin.multilangexcelparcer</id>
+    <name>Multi Lang Excel Parser</name>
+    <version>1.0</version>
+    <vendor email="saravana.th@tcs.com" url="http://www.tcs.com">TCS</vendor>
+
+    <description><![CDATA[
+      Integrates Multi Lang for BNPP Android project.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      Notifications Added<br>
+      Dialog remembers previous location and size<br>
+    ]]>
+    </change-notes>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Build+Number+Ranges for description -->
+    <idea-version since-build="131"/>
+
+    <!-- please see http://confluence.jetbrains.com/display/IDEADEV/Plugin+Compatibility+with+IntelliJ+Platform+Products
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <application-components>
+        <!-- Add your application components here -->
+    </application-components>
+
+    <project-components>
+        <!-- Add your project components here -->
+    </project-components>
+
+    <actions>
+        <!-- Add your actions here -->
+        <action id="MultiLangIntegrate" class="javacode.actions.MultiLangIntegrator" text="Integrate Multi Lang"
+                description="Integrates Multi Lang" icon="/icons/BNPPICON_16x16.png"/>
+
+        <group id="multilangexcelparcer.group.bnpp" popup="true" text="BNPP"
+               description="Common Menu for all BNPP plugins">
+            <group id="multilangexcelparcer.group.bnpp.obsolete" text="Obsolete" popup="true"
+                   description="Contains all the obsolete plugins">
+            <reference ref="MultiLangIntegrate" />
+            </group>
+
+            <add-to-group group-id="MainMenu" anchor="before" relative-to-action="HelpMenu"/>
+        </group>
+    </actions>
+
+</idea-plugin>
